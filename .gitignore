@@ -2,3 +2,4 @@ target/*
 *.jar
 logs/
 *.log
+.DS_Store
