@@ -15,6 +15,7 @@ public class ShiftReport {
 	private List<FuelSales> fuelSales;
 	private List<FuelInventory> fuelInventory;
 	private List<CarwashSales> carwashSales;
+	private List<Discount> discounts;
 	private List<Payment> payments;
 	private Totals totals;
 	private String street;
@@ -138,5 +139,11 @@ public class ShiftReport {
 	}
 	public void setFuelInventory(List<FuelInventory> fuelInventory) {
 		this.fuelInventory = fuelInventory;
+	}
+	public List<Discount> getDiscounts() {
+		return discounts;
+	}
+	public void setDiscounts(List<Discount> discounts) {
+		this.discounts = discounts;
 	}
 }

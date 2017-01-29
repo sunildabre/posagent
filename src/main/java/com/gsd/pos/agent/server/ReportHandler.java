@@ -8,10 +8,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+
 import org.apache.log4j.Logger;
+
 import com.google.gson.Gson;
 import com.gsd.pos.dao.ShiftCloseReportDao;
-import com.gsd.pos.dao.impl.ShiftCloseReportDaoImpl;
+import com.gsd.pos.dao.impl.ShiftCloseReportDaoImpl2;
 import com.gsd.pos.model.ShiftReport;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
@@ -81,7 +83,10 @@ public class ReportHandler implements HttpHandler{
 	
 
 	private String getShiftCloseReport(Date date) {
-		ShiftCloseReportDao dao = new ShiftCloseReportDaoImpl();
+//		ShiftCloseReportDao dao = new ShiftCloseReportDaoImpl();
+		logger.info("Using DAO2 ");
+		ShiftCloseReportDao dao = new ShiftCloseReportDaoImpl2();
+		
 		ShiftReport report =  dao.getReport(date);
 		Gson gson = new Gson();
 		return gson.toJson(report);
